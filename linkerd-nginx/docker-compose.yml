@@ -1,0 +1,15 @@
+version: '2.4'
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: Dockerfile-nginx
+    image: xiao5233/linkerd-web-nginx:1.1
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    container_name: linkerd-web-nginx
+    environment:
+      - TZ=Asia/Shanghai
+
